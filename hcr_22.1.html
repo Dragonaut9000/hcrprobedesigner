@@ -201,7 +201,7 @@ References: 1) Choi, H. M. T., Schwarzkopf, M., Fornace, M. E., Acharya, A., Art
 
             while (idx + 52 <= sequence.length) {
                 let p1 = sequence.slice(idx, idx + 25);
-                let p2 = sequence.slice(idx + 25, idx + 50);
+                let p2 = sequence.slice(idx + 27, idx + 50);
                 let rc1 = reverseComplement(p1);
                 let rc2 = reverseComplement(p2);
 
@@ -210,9 +210,12 @@ References: 1) Choi, H. M. T., Schwarzkopf, M., Fornace, M. E., Acharya, A., Art
                     continue;
                 }
 
-                for (let i = idx; i < idx + 50; i++) {
-                    highlightedSequence[i] = `<span class="highlight">${highlightedSequence[i]}</span>`;
-                }
+                for (let i = idx; i < idx + 25; i++) {
+    highlightedSequence[i] = `<span class="highlight">${highlightedSequence[i]}</span>`;
+}
+for (let i = idx + 27; i < idx + 52; i++) {
+    highlightedSequence[i] = `<span class="highlight">${highlightedSequence[i]}</span>`;
+}
 
                 let name1 = `${geneName}_${amplifier}_P1_${set}`;
                 let name2 = `${geneName}_${amplifier}_P2_${set}`;
